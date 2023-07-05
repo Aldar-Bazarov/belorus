@@ -1,26 +1,33 @@
 {
+  "exclude": [ "node_modules" ],
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
+    "target": "ES5",
+    "module": "CommonJS",
+    "resolveJsonModule": true,
+    
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    
+    "baseUrl": "./src",
+    "paths": {
+      "@api/*": ["api/*"],
+      "@components/*": ["components/*"],
+      "@containers/*": ["containers/*"],
+      "@utils/*": ["utils/*"]
+    },
     "isolatedModules": true,
+
     "noEmit": true,
-    "jsx": "react-jsx"
-  },
-  "include": [
-    "src"
-  ]
+    "plugins": [{ 
+      "name": "typescript-plugin-css-modules",
+      "options": {
+        "classnameTransform": "camelCase",
+      }
+    }]
+  }
 }

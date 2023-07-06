@@ -1,11 +1,7 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
 import { AppContainer } from "./app-container";
+import "./styles.less";
 
 export function ReactApplicationContainer(): JSX.Element {
-  return (
-    <BrowserRouter>
-      <AppContainer />
-    </BrowserRouter>
-  );
+  return <AppContainer />;
 }

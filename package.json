@@ -8,16 +8,13 @@
     "start": "webpack serve --mode=development",
     "watch": "webpack --watch --mode=development",
     "build": "webpack --mode=development",
-    "build:release": "webpack --mode=production",
-    "build-sbs": "webpack --mode=development --env SBS",
-    "build-sbs:release": "webpack --mode=production --env SBS"
+    "build:release": "webpack --mode=production"
   },
   "dependencies": {
     "@ois-design-ui/components": "1.104.72675",
     "core-js": "3.31.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "6.14.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -28,7 +25,7 @@
     "@babel/preset-typescript": "^7.16.0",
     "@types/node": "^16.11.11",
     "@types/react": "^16.14.21",
-    "@types/react-dom": "^16.9.14",
+    "@types/react-dom": "18.2.6",
     "@types/webpack": "^5.28.0",
     "@types/webpack-dev-server": "^4.5.0",
     "babel-loader": "^8.2.3",

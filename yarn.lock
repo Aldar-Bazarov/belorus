@@ -1326,11 +1326,6 @@
     "@react-spring/shared" "~9.3.0"
     "@react-spring/types" "~9.3.0"
 
-"@remix-run/router@1.7.1":
-  version "1.7.1"
-  resolved "https://intnxrepo.asuproject.ru/repository/all-npm/@remix-run/router/-/router-1.7.1.tgz#fea7ac35ae4014637c130011f59428f618730498"
-  integrity sha512-bgVQM4ZJ2u2CM8k1ey70o1ePFXsEzYVZoWghh6WjM8p59jQ7HxzbHW4SbnWFG7V9ig9chLawQxDTZ3xzOF8MkQ==
-
 "@tsconfig/node10@^1.0.7":
   version "1.0.9"
   resolved "https://intnxrepo.asuproject.ru/repository/all-npm/@tsconfig/node10/-/node10-1.0.9.tgz#df4907fc07a886922637b15e02d4cebc4c0021b2"
@@ -1573,19 +1568,12 @@
   resolved "https://intnxrepo.asuproject.ru/repository/all-npm/@types/range-parser/-/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
 
-"@types/react-dom@*":
+"@types/react-dom@*", "@types/react-dom@18.2.6":
   version "18.2.6"
   resolved "https://intnxrepo.asuproject.ru/repository/all-npm/@types/react-dom/-/react-dom-18.2.6.tgz#ad621fa71a8db29af7c31b41b2ea3d8a6f4144d1"
   integrity sha512-2et4PDvg6PVCyS7fuTc4gPoksV58bW0RwSxWKcPRcHZf0PRUGq03TKcD/rUHe3azfV6/5/biUBJw+HhCQjaP0A==
   dependencies:
     "@types/react" "*"
-
-"@types/react-dom@^16.9.14":
-  version "16.9.19"
-  resolved "https://intnxrepo.asuproject.ru/repository/all-npm/@types/react-dom/-/react-dom-16.9.19.tgz#6a139c26b02dec533a7fa131f084561babb10a8f"
-  integrity sha512-xC8D280Bf6p0zguJ8g62jcEOKZiUbx9sIe6O3tT/lKfR87A7A6g65q13z6D5QUMIa/6yFPkNhqjF5z/VVZEYqQ==
-  dependencies:
-    "@types/react" "^16"
 
 "@types/react@*":
   version "18.2.14"
@@ -1596,7 +1584,7 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@^16", "@types/react@^16.14.21":
+"@types/react@^16.14.21":
   version "16.14.43"
   resolved "https://intnxrepo.asuproject.ru/repository/all-npm/@types/react/-/react-16.14.43.tgz#bc6e7a0e99826809591d38ddf1193955de32c446"
   integrity sha512-7zdjv7jvoLLQg1tTvpQsm+hyNUMT2mPlNV1+d0I8fbGhkJl82spopMyBlu4wb1dviZAxpGdk5eHu/muacknnfw==
@@ -5132,21 +5120,6 @@ react-resizable@3.0.4:
   dependencies:
     prop-types "15.x"
     react-draggable "^4.0.3"
-
-react-router-dom@6.14.1:
-  version "6.14.1"
-  resolved "https://intnxrepo.asuproject.ru/repository/all-npm/react-router-dom/-/react-router-dom-6.14.1.tgz#0ad7ba7abdf75baa61169d49f096f0494907a36f"
-  integrity sha512-ssF6M5UkQjHK70fgukCJyjlda0Dgono2QGwqGvuk7D+EDGHdacEN3Yke2LTMjkrpHuFwBfDFsEjGVXBDmL+bWw==
-  dependencies:
-    "@remix-run/router" "1.7.1"
-    react-router "6.14.1"
-
-react-router@6.14.1:
-  version "6.14.1"
-  resolved "https://intnxrepo.asuproject.ru/repository/all-npm/react-router/-/react-router-6.14.1.tgz#5e82bcdabf21add859dc04b1859f91066b3a5810"
-  integrity sha512-U4PfgvG55LdvbQjg5Y9QRWyVxIdO1LlpYT7x+tMAxd9/vmiPuJhIwdxZuIQLN/9e3O4KFDHYfR9gzGeYMasW8g==
-  dependencies:
-    "@remix-run/router" "1.7.1"
 
 react-spring@9.3.2:
   version "9.3.2"

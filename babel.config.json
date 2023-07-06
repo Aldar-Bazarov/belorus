@@ -5,7 +5,7 @@
       {
         "targets": "defaults, IE 11, chrome 86",
         "useBuiltIns": "entry",
-        "corejs": "3.19"
+        "corejs": "3.31.0"
       }
     ],
     "@babel/preset-react",

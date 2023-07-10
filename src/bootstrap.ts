@@ -7,7 +7,7 @@ render({
   elementId: 'root',
   lang: 'ru',
   locale: 'ru-RU',
-  slug: '',
+  slug: 'belorus-app',
   mediator: new Mediator(),
   baseUrl: localUrl,
   navigatorUrl: localUrl,

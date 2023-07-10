@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+
+  gateway:
+    image: all-docker.asuproject.ru/ois-api-gateway/core:230419.1309.1
+    ports:
+      - '8081:8080'
+    environment:
+      - SBSCOREWEB_URL=http://backend:80 # внутренний порт
+      - OPENIDC_DISCOVERY=https://sso.okd.asuproject.ru/auth/realms/UFAM/.well-known/openid-configuration
+      - OPENIDC_CLIENT_ID=ufam
+      - OPENIDC_CLIENT_SECRET=a6fa8963-6e3a-4b62-8e61-02f91f443a65
+
+  backend:
+    image: all-docker.asuproject.ru/ois-web-core/back:5.3.230420.4-develop
+    environment:
+      - Security__AuthenticationTypes=Basic, OpenIdConnect
+      - Security__OpenIdConnect__Authority=https://sso.okd.asuproject.ru/auth/realms/UFAM/
+      #- AppSettings__homeAppId= # убераем стартовое приложение
+      - AppSettings__ApiGatewayUrl=http://gateway:8080 # внутренний порт
+      - StartInitialization__Enabled=true
+      - StartInitialization__Apps__IntWell__Name=Белоруснефть (отладка)
+      - StartInitialization__Apps__IntWell__Code=ois_belorus
+      - StartInitialization__Apps__IntWell__Url=http://host.docker.internal:3000/ois-belorus-bundle-wmf.js

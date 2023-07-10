@@ -19,7 +19,7 @@ export const commonConfiguration = (): Configuration => {
     },
     
     output: {
-      filename: '[name]-bundle.[contenthash].js',
+      filename: 'ois-belorus-bundle.js',
       publicPath: 'auto',
       clean: true
     },
@@ -118,10 +118,10 @@ export const commonConfiguration = (): Configuration => {
       //   openAnalyzer: false // по умолчанию TRUE, чтобы открывать результат в браузере
       // }),
       new ModuleFederationPlugin({
-        name: 'belorus',
-        filename: 'belorus.js',
+        name: 'ois_belorus',
+        filename: 'ois-belorus-bundle-wmf.js',
         exposes: {
-          './renderBelorus': './src/render',
+          './render': './src/render',
         },
         shared: {
           ...deps,

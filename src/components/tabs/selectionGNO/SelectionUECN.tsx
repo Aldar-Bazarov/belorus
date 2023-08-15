@@ -16,7 +16,7 @@ import data from "./data.json";
 const sourceData: SourceDataType[] = [
   {
     type: "input",
-    label: "Частота насоса",
+    label: "Частота УЭЦН",
     unit: "ГЦ",
   },
   {
@@ -31,12 +31,12 @@ const sourceData: SourceDataType[] = [
   },
   {
     type: "input",
-    label: "Коэффициент операции",
+    label: "Коэффициент сепарации",
     unit: "%",
   },
   {
     type: "input",
-    label: "Целевая производительность",
+    label: "Целевой дебит",
     unit: "м3/сут",
   },
   {
@@ -61,21 +61,13 @@ const sourceData: SourceDataType[] = [
   },
   {
     type: "input",
-    label: "Запас по мощности двигателя",
+    label: "Допустимая перегрузка ПЭД",
     unit: "%",
   },
   {
     type: "input",
     label: "Коэффициент износа насоса",
     unit: "д.ед.",
-  },
-  {
-    type: "select",
-    label: "Корреляция МФП",
-    selectValues: [
-      { value: "jack", label: "Beggs and Brill" },
-      { value: "disabled", label: "Скважина 2", disabled: true },
-    ],
   },
 ];
 
@@ -100,13 +92,19 @@ const equipment: SourceDataType[] = [
 export const SelectionUECN = () => {
   const [pumpDesignMode, setPumpDesignMode] = React.useState<ResultType[]>([]);
   const [results, setReuslts] = React.useState<ResultType[]>([]);
+  const [isVisibleEquipment, setIsVisibleEquipment] =
+    React.useState<boolean>(false);
 
-  React.useEffect(() => {
+  // React.useEffect(() => {
+  //   setPumpDesignMode(data.pumpDesignMode);
+  //   setReuslts(data.resultsUECN);
+  // }, []);
+
+  const fetchResult = async () => {
+    setIsVisibleEquipment(true);
     setPumpDesignMode(data.pumpDesignMode);
     setReuslts(data.resultsUECN);
-  }, []);
-
-  const fetchResult = async () => {};
+  };
 
   return (
     <>
@@ -168,30 +166,34 @@ export const SelectionUECN = () => {
                 )}
               </Form.Item>
             ))}
-            <Typography.Title level={5} style={{ marginBottom: 20 }}>
-              Оборудование:
-            </Typography.Title>
-            {equipment.map((formItem: SourceDataType) => (
-              <Form.Item
-                label={formItem.label}
-                labelAlign="left"
-                style={{ margin: "10px 0" }}
-                key={formItem.label}
-              >
-                {formItem.type === "select" ? (
-                  <Select
-                    options={formItem.selectValues}
-                    style={{ width: "100%" }}
-                  />
-                ) : (
-                  <Input
-                    addonAfter={formItem.unit}
-                    type="number"
-                    style={{ width: "100%" }}
-                  />
-                )}
-              </Form.Item>
-            ))}
+            {isVisibleEquipment && (
+              <>
+                <Typography.Title level={5} style={{ marginBottom: 20 }}>
+                  Оборудование:
+                </Typography.Title>
+                {equipment.map((formItem: SourceDataType) => (
+                  <Form.Item
+                    label={formItem.label}
+                    labelAlign="left"
+                    style={{ margin: "10px 0" }}
+                    key={formItem.label}
+                  >
+                    {formItem.type === "select" ? (
+                      <Select
+                        options={formItem.selectValues}
+                        style={{ width: "100%" }}
+                      />
+                    ) : (
+                      <Input
+                        addonAfter={formItem.unit}
+                        type="number"
+                        style={{ width: "100%" }}
+                      />
+                    )}
+                  </Form.Item>
+                ))}
+              </>
+            )}
           </Form>
         </Col>
         <Col span={14}>

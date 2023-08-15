@@ -1,8 +1,8 @@
 import React from 'react'
 import { Tabs } from 'antd';
 import type { TabsProps } from 'antd';
-import { SelectionUECN } from '../tabs/selectionGNO/SelectionUECN';
-import { SelectionSHGN } from '../tabs/selectionGNO/SelectionSHGN';
+import { SelectionUECN } from '@components/tabs/selectionGNO/SelectionUECN';
+import { SelectionSHGN } from '@components/tabs/selectionGNO/SelectionSHGN';
 
 const menuItems: TabsProps['items'] = [
   {
@@ -14,18 +14,6 @@ const menuItems: TabsProps['items'] = [
     key: "2",
     label: "Подбор ШГН",
     children: <SelectionSHGN />
-  },
-  {
-    key: "3",
-    label: "Оптимизация УЭЦН",
-  },
-  {
-    key: "4",
-    label: "Оптимизация ШГН",
-  },
-  {
-    key: "5",
-    label: "Глубина спуска ГНО",
   },
 ];
 

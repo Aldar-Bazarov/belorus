@@ -25,9 +25,9 @@ const calculationSetting: SourceDataType[] = [
   {
     type: "input",
     label: "",
-    unit: "кач/мин",
+    unit: "м3/сут",
     radioValue: "debit",
-    radioLabel: "Дебит",
+    radioLabel: "Целевой дебит",
   },
   {
     type: "select",
@@ -58,12 +58,12 @@ const sourceData: SourceDataType[] = [
   },
   {
     type: "input",
-    label: "Н ВДП",
+    label: "Глубина ВДП",
     unit: "м",
   },
   {
     type: "input",
-    label: "Н насоса",
+    label: "Глубина спуска насоса",
     unit: "м",
   },
   {
@@ -104,21 +104,33 @@ const sourceData: SourceDataType[] = [
     label: "Устьевое давление",
     unit: "бар",
   },
+  {
+    type: "input",
+    label: "Пластовое давление",
+    unit: "бар",
+  },
+  {
+    type: "input",
+    label: "Обводнённость",
+    unit: "%",
+  },
 ];
 
 export const SelectionSHGN = () => {
   const [results, setReuslts] = React.useState<ResultType[]>([]);
   const [selectedOption, setSelectedOption] = React.useState<string>("swings");
 
-  React.useEffect(() => {
-    setReuslts(data.resultsSHGN);
-  }, []);
+  // React.useEffect(() => {
+  //   setReuslts(data.resultsSHGN);
+  // }, []);
 
   const handleOptionChange = (e: any) => {
     setSelectedOption(e.target.value);
   };
 
-  const fetchResult = async () => {};
+  const fetchResult = async () => {
+    setReuslts(data.resultsSHGN);
+  }
 
   return (
     <>
